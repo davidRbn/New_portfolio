@@ -1,25 +1,20 @@
-import { SiGithub, SiLinkedin, SiTwitter } from 'react-icons/si';
+import { SiGithub, SiLinkedin } from "react-icons/si";
 
-export const GITHUB_USERNAME = 'melvynx';
+export const GITHUB_USERNAME = "davidRbn";
 
-export const EMAIL = 'test@email.com';
+export const EMAIL = "davidruben14@gmail.com";
 
-export const FULL_NAME = 'BeginReact';
+export const FULL_NAME = "David Ruben";
 
 export const SOCIAL_NETWORKS = [
   {
-    url: 'https://www.twitter.com/',
-    name: 'Twitter',
-    icon: <SiTwitter />,
-  },
-  {
-    url: 'https://www.linkedin.com/',
-    name: 'Linkedin',
+    url: "https://www.linkedin.com/in/david-ruben/",
+    name: "Linkedin",
     icon: <SiLinkedin />,
   },
   {
-    url: 'https://www.github.com/',
-    name: 'Github',
+    url: "https://github.com/davidRbn",
+    name: "Github",
     icon: <SiGithub />,
   },
 ];

@@ -89,7 +89,6 @@ const getHandler = async (req, res) => {
       },
     ],
   });
-
   const result = response.results.map((result) => {
     const properties = result.properties;
     return {

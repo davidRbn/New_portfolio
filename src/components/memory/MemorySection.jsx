@@ -1,20 +1,45 @@
-import { Button } from '../atom/Button';
-import { SectionWrapper } from '../atom/SectionWrapper';
-import { MemoryBoard } from './MemoryBoard';
-import { MemoryContextProvider } from './MemoryProvider';
+import { Button } from "../atom/Button";
+import { SectionWrapper } from "../atom/SectionWrapper";
+import { Typography } from "../atom/Typography";
+import { MemoryBoard } from "./MemoryBoard";
+import { MemoryContextProvider, useMemory } from "./MemoryProvider";
 
 export const MemorySection = () => {
   return (
-    <SectionWrapper title="You're boring ? Let's play a game !">
+    <SectionWrapper title="Tu t'ennuies, joue à un jeu !">
       <MemoryContextProvider>
         <div className="flex flex-col items-center gap-14">
           <div className="flex flex-col items-center gap-2">
-            <p>Score go here</p>
+            <CurrentScore />
             <MemoryBoard />
-            <Button>Reset go here</Button>
+            <ResetButton />
           </div>
         </div>
       </MemoryContextProvider>
     </SectionWrapper>
+  );
+};
+
+const CurrentScore = () => {
+  const { tryCount, isFinish } = useMemory();
+
+  if (isFinish) {
+    return (
+      <Typography variant="body2 underline">
+        You <b>finished</b> the memory in {tryCount} times !
+      </Typography>
+    );
+  }
+
+  return <Typography variant="body2">You try {tryCount} times.</Typography>;
+};
+
+const ResetButton = () => {
+  const { reset, tryCount } = useMemory();
+
+  return (
+    <Button disabled={tryCount === 0} onClick={reset}>
+      Reset
+    </Button>
   );
 };

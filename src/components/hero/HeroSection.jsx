@@ -1,28 +1,38 @@
+import { useContext } from "react";
 import { FULL_NAME } from "../../lib/config";
+import { ThemeContext } from "../../context/ThemeProvider";
 
 export const HeroSection = () => {
+  const { isLight } = useContext(ThemeContext);
+
   return (
-    <div className="relative">
+    <div className="margin-auto relative flex flex-col items-center ">
       <img
         width={300}
         height={300}
-        src="/images/avatar.jpg"
+        src={
+          isLight
+            ? "/images/photoProfil.jpg"
+            : "/images/photosProfilCouleur.png"
+        }
         alt="avatar"
-        className="rounded shadow-lg"
+        className=" right-0 z-0 rounded shadow-lg sm:absolute "
       />
       {/* Hero - Exercise*/}
-      <div className="">
+      <div className="z-10">
         {/* Hero - Exercise*/}
         <h1 className="text-6xl drop-shadow-[0_0px_20px_rgba(0,0,0,0.25)] md:text-8xl">
-          I'm{" "}
-          <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+          I'm{""}
+          <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text font-extrabold text-transparent">
             {FULL_NAME}
           </span>
         </h1>
-        <p className="max-w-xl text-xl">
-          <b>Apprenti React.</b> I’m a software developer that make thing on
-          internet, very happy to see your here, place holder please fill
-          something here please fill something here.
+        <p className=" relative max-w-xl text-xl">
+          <b>Apprenti React.</b> Je suis un développeur web junior passionné par
+          React.js. Issu d'une reconversion, je me spécialise dans la création
+          d'interfaces modernes et interactives. Toujours avide d'apprendre, je
+          cherche à contribuer à des projets innovants et à élargir mes
+          compétences en développement web.
         </p>
       </div>
     </div>
