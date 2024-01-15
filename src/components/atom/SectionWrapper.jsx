@@ -1,3 +1,4 @@
+import AnimationScroll from "../../animation/AnimationScroll";
 import { Typography } from "./Typography";
 
 /**
@@ -11,7 +12,10 @@ import { Typography } from "./Typography";
 export const SectionWrapper = ({ children, title }) => {
   return (
     <div className="flex flex-col items-center gap-12">
-      <Typography variant="h2">{title}</Typography>
+      <AnimationScroll delayAnim={0.1}>
+        <Typography variant="h2">{title}</Typography>
+      </AnimationScroll>
+
       {children}
     </div>
   );

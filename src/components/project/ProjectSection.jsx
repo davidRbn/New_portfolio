@@ -1,3 +1,4 @@
+import AnimationScroll from "../../animation/AnimationScroll";
 import { useFetch } from "../../hooks/useFetch";
 import { getListOfUrlRepositoriesUrl } from "../../lib/api-url";
 import { GITHUB_USERNAME } from "../../lib/config";
@@ -29,11 +30,13 @@ export const ProjectSection = () => {
 
   return (
     <SectionWrapper title="Projets">
-      <div className="flex flex-wrap justify-center gap-4 md:gap-8">
-        {projects?.map((project) => (
-          <Project key={project.name} {...project} />
-        ))}
-      </div>
+      <AnimationScroll delayAnim={0.1}>
+        <div className="flex flex-wrap justify-center gap-4 md:gap-8">
+          {projects?.map((project) => (
+            <Project key={project.name} {...project} />
+          ))}
+        </div>
+      </AnimationScroll>
     </SectionWrapper>
   );
 };
