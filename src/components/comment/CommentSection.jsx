@@ -32,7 +32,7 @@ export const CommentSection = () => {
     });
 
   return (
-    <SectionWrapper title="On est à l'époque de FaceBook ?">
+    <SectionWrapper title="Partagez vos impressions !">
       <div className=" m-auto flex w-full max-w-2xl flex-col items-center gap-8">
         <div className="grid w-full grid-cols-auto-fill-200-300 justify-center gap-4">
           {isResolved
