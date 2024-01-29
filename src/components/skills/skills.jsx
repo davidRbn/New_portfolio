@@ -1,9 +1,9 @@
 import { IoLogoReact } from "react-icons/io5";
 import { IconContext } from "react-icons/lib";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaNodeJs } from "react-icons/fa";
 import { FaHtml5 } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
-import { SiTypescript } from "react-icons/si";
+import { SiExpress, SiTypescript } from "react-icons/si";
 import clsx from "clsx";
 import AnimationScroll from "../../animation/AnimationScroll";
 
@@ -26,6 +26,14 @@ const Skills = () => {
       name: "React",
     },
     {
+      logo: <FaNodeJs />,
+      name: "NodeJs",
+    },
+    {
+      logo: <SiExpress />,
+      name: "Express",
+    },
+    {
       logo: <FaGithub />,
       name: "Git & github",
     },
@@ -41,31 +49,30 @@ const Skills = () => {
       >
         Compétences
       </h2>
-      <AnimationScroll delayAnim={0.1}>
-        <IconContext.Provider
-          value={{
-            style: {
-              verticalAlign: "middle",
-              margin: "auto",
-              height: "30px",
-            },
-          }}
-        >
-          <ul className="flex flex-row flex-wrap justify-around gap-12 text-center">
-            {listSkills.map((e, index) => {
-              return (
-                <li
-                  className=" w-50 flex flex-col gap-4 rounded-2xl bg-paper p-4 transition-transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring focus:ring-primary focus:ring-opacity-50 md:w-40 md:p-8"
-                  key={index}
-                >
+
+      <IconContext.Provider
+        value={{
+          style: {
+            verticalAlign: "middle",
+            margin: "auto",
+            height: "30px",
+          },
+        }}
+      >
+        <ul className="flex flex-row flex-wrap justify-around gap-12 text-center">
+          {listSkills.map((e, index) => {
+            const animDelay = (index + 1) / 20;
+            return (
+              <AnimationScroll key={index} delayAnim={animDelay}>
+                <li className=" w-50 flex flex-col gap-4 rounded-2xl bg-paper p-4 transition-transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring focus:ring-primary focus:ring-opacity-50 md:w-40 md:p-8">
                   <h3>{e.logo}</h3>
                   <p className="text-lg">{e.name}</p>
                 </li>
-              );
-            })}
-          </ul>
-        </IconContext.Provider>
-      </AnimationScroll>
+              </AnimationScroll>
+            );
+          })}
+        </ul>
+      </IconContext.Provider>
     </div>
   );
 };

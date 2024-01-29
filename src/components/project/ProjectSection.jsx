@@ -30,13 +30,17 @@ export const ProjectSection = () => {
 
   return (
     <SectionWrapper title="Projets">
-      <AnimationScroll delayAnim={0.1}>
-        <div className="flex flex-wrap justify-center gap-4 md:gap-8">
-          {projects?.map((project) => (
-            <Project key={project.name} {...project} />
-          ))}
-        </div>
-      </AnimationScroll>
+      <div className="flex flex-wrap justify-center gap-4 md:gap-8">
+        {projects?.map((project, index) => {
+          const animDelay = (index + 1) / 15;
+
+          return (
+            <AnimationScroll key={project.name} delayAnim={animDelay}>
+              <Project {...project} />
+            </AnimationScroll>
+          );
+        })}
+      </div>
     </SectionWrapper>
   );
 };
