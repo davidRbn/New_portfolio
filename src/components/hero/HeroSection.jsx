@@ -17,7 +17,7 @@ export const HeroSection = () => {
             : "/images/photosProfilCouleur.png"
         }
         alt="avatar"
-        className=" right-0 z-0 rounded shadow-lg sm:absolute "
+        className=" right-0 z-0 rounded-3xl shadow-lg sm:absolute "
       />
       {/* Hero - Exercise*/}
       <div className="z-10">

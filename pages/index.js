@@ -24,7 +24,7 @@ const Home = () => {
         <HeroSection />
         <Skills />
         <ProjectSection />
-        <DynamicMemorySection />
+        {/* <DynamicMemorySection /> */}
         {/* <DrawSection /> */}
         <CommentSection />
         <Footer />
