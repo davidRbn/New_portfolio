@@ -1,4 +1,4 @@
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import Head from "next/head";
 import { CommentSection } from "../src/components/comment";
 // import { DrawSection } from "../src/components/draw";
@@ -9,9 +9,9 @@ import { ProjectSection } from "../src/components/project";
 import Skills from "../src/components/skills/skills";
 
 // dynamic import Memory Section
-const DynamicMemorySection = dynamic(() => import("../src/components/memory"), {
-  ssr: false,
-});
+// const DynamicMemorySection = dynamic(() => import("../src/components/memory"), {
+//   ssr: false,
+// });
 
 const Home = () => {
   return (
