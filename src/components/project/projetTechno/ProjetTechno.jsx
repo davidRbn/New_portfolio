@@ -7,10 +7,13 @@ const ProjetTechno = ({ name }) => {
         technoUse = ["React", "Firebase"];
         break;
       case "MyMovies":
-        technoUse = ["React", "NodeJs", "Sequelize", "MaterialUi"];
+        technoUse = ["React", "NodeJs", "Express", "Sequelize", "MaterialUi"];
         break;
       case "InfoMeteo":
         technoUse = ["React", "Typescript"];
+        break;
+      case "SmartTweet":
+        technoUse = ["React", "Typescript", "Firebase", "TailwindCss"];
         break;
       default:
         technoUse = [];
